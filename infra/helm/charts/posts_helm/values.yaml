@@ -1,0 +1,12 @@
+deploy:
+  deployName: posts-depl
+  name: posts
+  replicaCount: 1
+  container:
+    image: wlainer/posts
+    port: 4000
+    imagePullPolicy: Never
+service:
+  serviceName: posts-clusterip-srv
+  name: posts
+  port: 4000

@@ -1,0 +1,13 @@
+deploy:
+  deployName: comments-depl
+  name: comments
+  replicaCount: 1
+  container:
+    image: wlainer/comments
+
+    port: 4001
+    imagePullPolicy: Never
+service:
+  serviceName: comments-srv
+  name: comments
+  port: 4001

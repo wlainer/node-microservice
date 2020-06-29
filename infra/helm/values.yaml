@@ -1,0 +1,28 @@
+deploy:
+  deployName: client-depl
+  name: client
+  replicaCount: 1
+  container:
+    image: wlainer/client
+    port: 3000
+    imagePullPolicy: Never
+service:
+  serviceName: client-srv
+  name: client
+  port: 3000
+ingress:
+  name: ingress-srv
+  host: posts.com
+  paths: 
+    - path: /posts/create
+      serviceName: posts-clusterip-srv
+      servicePort: 4000
+    - path: /posts
+      serviceName: query-srv
+      servicePort: 4002
+    - path: /posts/?(.*)/comments
+      serviceName: comments-srv
+      servicePort: 4001
+    - path: /?(.*)
+      serviceName: client-srv
+      servicePort: 3000                    

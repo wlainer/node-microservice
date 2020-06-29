@@ -1,0 +1,12 @@
+deploy:
+  deployName: moderation-depl
+  name: moderation
+  replicaCount: 1
+  container:
+    image: wlainer/moderation
+    port: 4003
+    imagePullPolicy: Never
+service:
+  serviceName: moderation-srv
+  name: moderation
+  port: 4003

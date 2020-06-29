@@ -1,0 +1,12 @@
+deploy:
+  deployName: event-bus-depl
+  name: event-bus
+  replicaCount: 1
+  container:
+    image: wlainer/event-bus
+    port: 4005
+    imagePullPolicy: Never
+service:
+  serviceName: event-bus-srv
+  name: event-bus
+  port: 4005

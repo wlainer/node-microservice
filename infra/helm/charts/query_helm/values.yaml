@@ -1,0 +1,12 @@
+deploy:
+  deployName: query-depl
+  name: query
+  replicaCount: 1
+  container:
+    image: wlainer/query
+    port: 4000
+    imagePullPolicy: Never
+service:
+  serviceName: query-srv
+  name: query
+  port: 4002
