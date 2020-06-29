@@ -1,4 +1,4 @@
-const {randomBytes} = require('crypto')
+const { randomBytes } = require('crypto')
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
@@ -36,7 +36,7 @@ app.post('/posts', async (req, res) => {
 app.post('/events', (req, res) => {
   console.log('Received Event ', req.body.type)
 
-  res.send({})
+  res.status(200).send({})
 })
 
 app.listen(4000, () => console.log('Listening on port 4000.'))
